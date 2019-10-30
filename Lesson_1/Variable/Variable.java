@@ -1,27 +1,27 @@
 public class Variable {
-  public static void main(String[] args) {
-    byte numberOne = 7;
-    System.out.println (numberOne);
+    public static void main(String[] args) {
+        byte core = 4;
+        System.out.println(core);
 
-    short numberTwo = 16;
-    System.out.println (numberTwo);
+        short processor = 7;
+        System.out.println(processor);
 
-    int numberThree = 64;
-    System.out.println (numberThree);
+        int ram = 16 ;
+        System.out.println(ram);
 
-    long numberFour = 500 ;
-    System.out.println (numberFour);
+        long bitVersion = 64 ;
+        System.out.println(bitVersion);
 
-    float numberFive = 4.00f;
-    System.out.println (numberFive);
+        float frequency = 4.00f;
+        System.out.println(frequency);
 
-    double numberSix = 400000.00d;
-    System.out.println (numberSix);
+        double memoryCcd = 500.00d;
+        System.out.println(memoryCcd);
 
-    char numberSeven = 'C';
-    System.out.println (numberSeven);
-    
-    boolean numberEight = true;
-    System.out.println (numberEight);
-  }
+        char myComputer = 'C';
+        System.out.println(myComputer);
+
+        boolean isTrue = true;
+        System.out.println(isTrue);
+    }
 }
