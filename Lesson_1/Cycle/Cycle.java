@@ -3,14 +3,14 @@ public class Cycle {
         for (int i = 0; i <= 20; i++) {
             System.out. print(i + " ");
         }
-         System.out.println();
+        System.out.println();
 
         int counter = 6;
         while (counter >= -6) {
             System.out.print(counter + " ");
             counter -= 2;
         }
-         System.out.println();
+        System.out.println();
 
         int sumOdd = 0;
         counter = 10;
