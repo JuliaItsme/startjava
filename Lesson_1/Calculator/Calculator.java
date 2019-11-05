@@ -13,13 +13,14 @@ public class Calculator {
         } else if (operation == '/') {
             System.out.println("Частное чисел" + (firstNumber / secondNumber));
         } else if (operation == '%') {
-            if (firstNumber%secondNumber == 0)
+            if (firstNumber % secondNumber == 0) {
                 System.out.println("Деление без остатка");
-            else
-                System.out.println("Остаток от деления " + (firstNumber%secondNumber));
+            } else {
+                System.out.println("Остаток от деления " + (firstNumber % secondNumber));
+            }
         } else if (operation == '^') {
             int result = 1;
-            for (int i=1; i<=secondNumber; i++) {
+            for (int i = 1; i <= secondNumber; i++) {
                 result *= firstNumber;
             }
             System.out.println("Степень числа " + result);

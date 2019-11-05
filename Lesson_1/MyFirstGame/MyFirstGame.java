@@ -6,13 +6,15 @@ public class MyFirstGame {
 
         if (youNumber > compNumber) {
             for (int i = youNumber; i <= 100; i--) {
-                if (i > compNumber) 
+                if (i > compNumber) {
                     System.out.println("Загаданное число меньше"); 
+                }
             }
         } else if (youNumber < compNumber) {
             for (int i = youNumber; i <= 100; i++) {
-                if (i < compNumber) 
+                if (i < compNumber) {
                     System.out.println("Загаданное число больше"); 
+                }
             }
         } 
         System.out.println("Поздравляем! Вы победили!");
