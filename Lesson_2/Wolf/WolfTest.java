@@ -11,7 +11,7 @@ public class WolfTest {
         wolf.setWeight(50.0f);
         System.out.println("Вес = " + wolf.getWeight());
 
-        wolf.setAge(5);
+        wolf.setAge(9);
         System.out.println("Возраст = " + wolf.getAge());
     
         
