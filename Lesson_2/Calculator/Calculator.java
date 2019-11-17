@@ -8,27 +8,15 @@ public class Calculator {
         this.firstNumber = firstNumber;
     }
 
-    public int getFirstNumber() {
-        return firstNumber;
-    }
-
     public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
-    }
-
-    public int getSecondNumber() {
-        return secondNumber;
     }
 
     public void setOperation(char operation) {
         this.operation = operation;
     }
 
-    public char getOperation() {
-        return operation;
-    }
-
-    public void result(int firstNumber, int secondNumber, char operation) {
+    public void result() {
         switch (operation) {
                 case '+':
                     System.out.println("Сумма чисел " + (firstNumber + secondNumber));

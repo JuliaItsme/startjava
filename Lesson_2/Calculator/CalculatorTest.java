@@ -10,24 +10,20 @@ public class CalculatorTest {
 
             System.out.print("Введите первое число: ");
             calculator.setFirstNumber(scanner.nextInt());
-            int firstNumber = calculator.getFirstNumber();
 
             System.out.print("Введите знак математической операции: ");
             calculator.setOperation(scanner.next().charAt(0));
-            char operation = calculator.getOperation();
 
             System.out.print("Введите второе число: ");
             calculator.setSecondNumber(scanner.nextInt());
-            int secondNumber = calculator.getSecondNumber();
 
-            calculator.result(firstNumber, secondNumber, operation);
+            calculator.result();
 
-            System.out.print("Хотите продолжить? [yes/no]: ");
-            answer = scanner.next();
-
-            while (answer.equals("no")) {
-                break;
-            } 
-        } while (answer.equals("yes") || answer.equals(" "));
+            do{
+            	System.out.print("Хотите продолжить? [yes/no]: ");
+            	answer = scanner.next();
+            } while (!answer.equals("yes") && !answer.equals("no")); 
+            
+        } while (answer.equals("yes"));
     }
 }
