@@ -7,7 +7,6 @@ public class CalculatorTest {
         String answer;
 
         do {
-
             System.out.print("Введите первое число: ");
             calculator.setFirstNumber(scanner.nextInt());
 
@@ -17,13 +16,12 @@ public class CalculatorTest {
             System.out.print("Введите второе число: ");
             calculator.setSecondNumber(scanner.nextInt());
 
-            calculator.result();
+            calculator.calculate();
 
-            do{
+            do {
             	System.out.print("Хотите продолжить? [yes/no]: ");
             	answer = scanner.next();
             } while (!answer.equals("yes") && !answer.equals("no")); 
-            
         } while (answer.equals("yes"));
     }
 }

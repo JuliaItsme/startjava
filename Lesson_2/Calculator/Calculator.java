@@ -16,36 +16,36 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public void result() {
+    public void calculate() {
         switch (operation) {
-                case '+':
-                    System.out.println("Сумма чисел " + (firstNumber + secondNumber));
-                    break;
-                case '-':
-                    System.out.println("Разность чисел " + (firstNumber - secondNumber));
-                    break;
-                case '*':
-                    System.out.println("Произведение чисел " + (firstNumber * secondNumber));
-                    break;
-                case '/':
-                    System.out.println("Частное чисел" + (firstNumber / secondNumber));
-
-                case '%':
-                    if (firstNumber % secondNumber == 0) {
-                        System.out.println("Деление без остатка");
-                    } else {
-                        System.out.println("Остаток от деления " + (firstNumber % secondNumber));
-                    }
-                    break;
-                case '^':
-                    int result = 1;
-                    for (int i = 1; i <= secondNumber; i++) {
-                        result *= firstNumber;
-                    }
-                    System.out.println("Степень числа " + result);
-                    break;
-                default:
-                    System.out.println("Вы ввели неверный оператор");
+            case '+':
+                System.out.println("Сумма чисел " + (firstNumber + secondNumber));
+                break;
+            case '-':
+                System.out.println("Разность чисел " + (firstNumber - secondNumber));
+                break;
+            case '*':
+                System.out.println("Произведение чисел " + (firstNumber * secondNumber));
+                break;
+            case '/':
+                System.out.println("Частное чисел" + (firstNumber / secondNumber));
+                break;
+            case '%':
+                if (firstNumber % secondNumber == 0) {
+                    System.out.println("Деление без остатка");
+                } else {
+                    System.out.println("Остаток от деления " + (firstNumber % secondNumber));
+                }
+                break;
+            case '^':
+                int result = 1;
+                for (int i = 1; i <= secondNumber; i++) {
+                    result *= firstNumber;
+                }
+                System.out.println("Степень числа " + result);
+                 break;
+            default:
+                System.out.println("Вы ввели неверный оператор");
         }
     }
 }
