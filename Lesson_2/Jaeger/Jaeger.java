@@ -1,4 +1,5 @@
 public class Jaeger {
+
     private String name;
     private int mark;
     private String origin;
@@ -6,52 +7,16 @@ public class Jaeger {
     private float weight;
     private int kaijuKilled;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Jaeger(String name, int mark, String origin, float height, float weight, int kaijuKilled) {
         this.name = name;
-    }
-
-    public int getMark() {
-        return mark;
-    }
-
-    public void setMark(int mark) {
         this.mark = mark;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
         this.origin = origin;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setHeight(float height) {
         this.height = height;
-    }
-
-    public float getWeight() {
-        return weight;
-    }
-
-    public void setWeight(float weight) {
         this.weight = weight;
-    }
-
-    public int getKaijuKilled() {
-        return kaijuKilled;
-    }
-
-    public void setKaijuKilled(int kaijuKilled) {
         this.kaijuKilled = kaijuKilled;
+        System.out.println(name + " убил " + kaijuKilled + " Кайдзю");
+        System.out.println("Его рост " + height + " см, вес " + weight + " тонн");
+        System.out.println(mark + " поколения, произведен в " + origin);
     }
 
     public void patrol() {
