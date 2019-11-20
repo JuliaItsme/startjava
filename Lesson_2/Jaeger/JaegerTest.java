@@ -14,6 +14,7 @@ public class JaegerTest {
 		System.out.println(jaegerOne.getMark() + " поколения, произведен в " + jaegerOne.getOrigin());
 
 		jaegerOne.drift();
+		jaegerOne.attackReflection();
 
 		jaegerTwo.setName("Striker Eureka");
 		jaegerTwo.setMark(5);
@@ -26,7 +27,7 @@ public class JaegerTest {
 		System.out.println(jaegerTwo.getMark() + " поколения, произведен в " + jaegerTwo.getOrigin());
 
 		jaegerTwo.drift();
-		jaegerOne.attackReflection();
+		jaegerTwo.patrol();
 
 		jaegerTwo.setName("Cherno Alpha");
 		jaegerTwo.setMark(1);
