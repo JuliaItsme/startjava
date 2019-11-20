@@ -16,6 +16,5 @@ public class JaegerTest {
         jaeger.drift();
         jaeger.patrol();
         jaeger.attackReflection();
-
     }
 }
