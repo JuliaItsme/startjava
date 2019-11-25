@@ -3,13 +3,11 @@ public class Player {
 	private String name;
 	private int number;
 
-	public Player() {}
-
 	public Player(String name) {
 		this.name = name;
 	}
 
-	public String getName() {
+  	public String getName() {
 		return name;
 	}
 
@@ -20,4 +18,4 @@ public class Player {
 	public int getNumber() {
 		return number;
 	}
-}
+ }

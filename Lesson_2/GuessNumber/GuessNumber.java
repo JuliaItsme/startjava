@@ -1,48 +1,52 @@
 import java.util.Scanner;
 
 public class GuessNumber {
-	public void guessingNumber(String playerOne, String playerTwo) {
-		Scanner scanner = new Scanner(System.in);
-		Player numbers = new Player();
-		String answer;
+	private Player playerOne;
+	private Player playerTwo;
 
-		do{
-			int numberComp = (0 + (int) (Math.random() * 100));
-			int numberOne;
-			int numberTwo;
-
-			do{
-				System.out.print("Iгрок " + playerOne + ", введите число: ");
-				numbers.setNumber(scanner.nextInt());
-				numberOne = numbers.getNumber();
-
-				if (numberOne > numberComp) {
-					System.out.println("Ваше число больше, чем загаданное компьютером");
-				} else if (numberOne < numberComp) {
-					System.out.println("Ваше число меньше, чем загаданное компьютером");
-				} else {
-					System.out.println("Поздравляем!" + " " + playerOne + " " + "Вы победили!");
-					break;
-				}
-
-				System.out.print("Iгрок " + playerTwo + ", введите число: ");
-				numbers.setNumber(scanner.nextInt());
-				numberTwo = numbers.getNumber();
-
-				if (numberTwo > numberComp) {
-					System.out.println("Ваше число больше, чем загаданное компьютером");
-				} else if (numberTwo < numberComp) {
-					System.out.println("Ваше число меньше, чем загаданное компьютером");
-				} else {
-					System.out.println("Поздравляем!" + " " + playerTwo + " " + "Вы победили!");
-					break;
-				}
-			} while (numberOne != numberComp && numberTwo != numberComp);
-
-			do {
-				System.out.print("Хотите продолжить? [yes/no]: ");
-				answer = scanner.next();
-			} while (!answer.equals("yes") && !answer.equals("no"));
-		} while (answer.equals("yes"));
+	public GuessNumber(Player playerOne, Player playerTwo) {
+		this.playerOne = playerOne;
+		this.playerTwo = playerTwo;
 	}
+
+	public void guessingNumber() {
+      	Scanner scanner = new Scanner(System.in);
+    	String answer;
+
+      	do{
+      		int numberComp = (0 + (int) (Math.random() * 100));
+
+      		do{
+        		System.out.print("Игрок " + playerOne.getName() + ", введите число: ");
+          		playerOne.setNumber(scanner.nextInt());
+
+	        	if (playerOne.getNumber() > numberComp) {
+	            	System.out.println("Ваше число больше, чем загаданное компьютером");
+	        	} else if (playerOne.getNumber() < numberComp) {
+	            	System.out.println("Ваше число меньше, чем загаданное компьютером");
+	        	} else {
+	        		System.out.println("Поздравляем! Игрок" + " " + playerOne.getName() + " " + "победил!");
+	        		break;
+	        	}
+
+	        	System.out.print("Игрок " + playerTwo.getName() + ", введите число: ");
+	        	playerTwo.setNumber(scanner.nextInt());
+
+	        	if (playerTwo.getNumber() > numberComp) {
+	            	System.out.println("Ваше число больше, чем загаданное компьютером");
+	        	} else if (playerTwo.getNumber() < numberComp) {
+	            	System.out.println("Ваше число меньше, чем загаданное компьютером");
+	        	} else {
+	        		System.out.println("Поздравляем! Игрок" + " " + playerTwo.getName() + " " + "победил!");
+	        		break;
+	        	}
+
+        	} while (playerOne.getNumber() != numberComp && playerTwo.getNumber() != numberComp);
+
+          	do {
+                System.out.print("Хотите продолжить? [yes/no]: ");
+                answer = scanner.next();
+            } while (!answer.equals("yes") && !answer.equals("no"));
+        } while (answer.equals("yes"));
+    }
 }
