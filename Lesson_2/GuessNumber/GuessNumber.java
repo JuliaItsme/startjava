@@ -10,40 +10,40 @@ public class GuessNumber {
 	}
 
 	public void guessingNumber() {
-      	Scanner scanner = new Scanner(System.in);
-    	String answer;
+		Scanner scanner = new Scanner(System.in);
+		String answer;
 
 		do{
-      		int numberComp = (0 + (int) (Math.random() * 100));
+			int numberComp = (0 + (int) (Math.random() * 100));
+			
+			do{
+				System.out.print("Игрок " + playerOne.getName() + ", введите число: ");
+				playerOne.setNumber(scanner.nextInt());
 
-      		do{
-        		System.out.print("Игрок " + playerOne.getName() + ", введите число: ");
-          		playerOne.setNumber(scanner.nextInt());
-
-	        	if (playerOne.getNumber() > numberComp) {
+				if (playerOne.getNumber() > numberComp) {
 					System.out.println("Ваше число больше, чем загаданное компьютером");
-	        	} else if (playerOne.getNumber() < numberComp) {
+				} else if (playerOne.getNumber() < numberComp) {
 					System.out.println("Ваше число меньше, чем загаданное компьютером");
-	        	} else {
+				} else {
 					System.out.println("Поздравляем! Игрок" + " " + playerOne.getName() + " " + "победил!");
 					break;
-	        	}
+				}
 
-	        	System.out.print("Игрок " + playerTwo.getName() + ", введите число: ");
-	        	playerTwo.setNumber(scanner.nextInt());
+				System.out.print("Игрок " + playerTwo.getName() + ", введите число: ");
+				playerTwo.setNumber(scanner.nextInt());
 
-	        	if (playerTwo.getNumber() > numberComp) {
+				if (playerTwo.getNumber() > numberComp) {
 					System.out.println("Ваше число больше, чем загаданное компьютером");
-	        	} else if (playerTwo.getNumber() < numberComp) {
+				} else if (playerTwo.getNumber() < numberComp) {
 					System.out.println("Ваше число меньше, чем загаданное компьютером");
-	        	} else {
+				} else {
 					System.out.println("Поздравляем! Игрок" + " " + playerTwo.getName() + " " + "победил!");
 					break;
-	        	}
+				}
 
-        	} while (playerOne.getNumber() != numberComp && playerTwo.getNumber() != numberComp);
+			} while (playerOne.getNumber() != numberComp && playerTwo.getNumber() != numberComp);
 
-          	do {
+			do {
 				System.out.print("Хотите продолжить? [yes/no]: ");
 				answer = scanner.next();
 			} while (!answer.equals("yes") && !answer.equals("no"));

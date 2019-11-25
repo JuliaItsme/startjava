@@ -7,7 +7,7 @@ public class Player {
 		this.name = name;
 	}
 
-  	public String getName() {
+	public String getName() {
 		return name;
 	}
 
@@ -18,4 +18,4 @@ public class Player {
 	public int getNumber() {
 		return number;
 	}
- }
+}
