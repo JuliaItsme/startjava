@@ -9,11 +9,11 @@ public class CalculatorTest {
 
         do {
             System.out.print("Введите математическое выражение: ");
-            String string = scanner.next();
-            String[] math = string.split("");               // Разделения строки c помощью метода split()
-            calculator.setFirstNumber(Integer.parseInt(math[0])); //пребразование String в int
-            calculator.setOperation(math[1].charAt(0));           //преобразованеи String в char
-            calculator.setSecondNumber(Integer.parseInt(math[2]));
+            String mathExpression = scanner.next();
+            String[] elements = mathExpression.split("");               // Разделения строки c помощью метода split()
+            calculator.setFirstNumber(Integer.parseInt(elements[0])); //пребразование String в int
+            calculator.setOperation(elements[1].charAt(0));           //преобразованеи String в char
+            calculator.setSecondNumber(Integer.parseInt(elements[2]));
 
             calculator.calculate();                                 //вызов метода
 

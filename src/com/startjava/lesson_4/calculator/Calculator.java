@@ -1,6 +1,6 @@
 package com.startjava.lesson_4.calculator;
-import java.lang.Math;
 
+import java.lang.Math;
 
 public class Calculator {
 
@@ -20,13 +20,6 @@ public class Calculator {
         this.operation = operation;
     }
 
-	private void powNumb() {
-        System.out.println("Степень числа " + Math.pow(firstNumber, secondNumber));
-	}
-	
-	private void remain() {
-		System.out.println("Остаток от деления " + Math.IEEEremainder(firstNumber, secondNumber));
-	}
     public void calculate() {
         switch (operation) {
             case '+':
@@ -42,11 +35,11 @@ public class Calculator {
                 System.out.println("Частное чисел" + (firstNumber / secondNumber));
                 break;
             case '%':
-				remain();
+                System.out.println("Остаток от деления " + Math.IEEEremainder(firstNumber, secondNumber));
                 break;
             case '^':
-                powNumb();
-                 break;
+                System.out.println("Степень числа " + Math.pow(firstNumber, secondNumber));
+                break;
             default:
                 System.out.println("Вы ввели неверный оператор");
         }
