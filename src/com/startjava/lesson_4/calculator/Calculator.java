@@ -2,7 +2,7 @@ package com.startjava.lesson_4.calculator;
 import java.lang.Math;
 
 
-public class Calculator<firstNumber, secondNumber> {
+public class Calculator {
 
     private int firstNumber;
     private int secondNumber;
@@ -21,7 +21,7 @@ public class Calculator<firstNumber, secondNumber> {
     }
 
 	private void powNumb() {
-		System.out.println("Степень числа " + Math.pow(firstNumber, secondNumber));
+        System.out.println("Степень числа " + Math.pow(firstNumber, secondNumber));
 	}
 	
 	private void remain() {

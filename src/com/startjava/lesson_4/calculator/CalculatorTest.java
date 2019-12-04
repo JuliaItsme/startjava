@@ -15,7 +15,7 @@ public class CalculatorTest {
             calculator.setOperation(math[1].charAt(0));           //преобразованеи String в char
             calculator.setSecondNumber(Integer.parseInt(math[2]));
 
-            calculator.calculate(); //вызов метода
+            calculator.calculate();                                 //вызов метода
 
             do {
             	System.out.print("Хотите продолжить? [yes/no]: ");
