@@ -18,7 +18,7 @@ public class ArrayTasks {
             //   System.out.print(number[i] + " ");
         }
 
-        /*
+
         // Сумма четных положительных элементов массива
         int sum = 0;
         for (int i = 0; i < number.length; i++) {
@@ -74,7 +74,7 @@ public class ArrayTasks {
          }
          System.out.println(minOne + " ");
          System.out.println(minTwo + " ");
-         */
+
         //Сортировка массива
         Arrays.sort(number);
         for (int numb : number) {
@@ -108,8 +108,8 @@ public class ArrayTasks {
         while (i < number.length) {
             if (number[i] <= b && number[i] >= a) {
                 numberLength--;
-                for (int j = i; j < number.length - 1; j++) {
-                    number[j] = number[j + 1];
+                for (int y = i; y < number.length - 1; y++) {
+                    number[y] = number[y + 1];
                 }
             } else {
                 i++;
