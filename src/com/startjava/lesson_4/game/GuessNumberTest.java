@@ -1,10 +1,11 @@
 package com.startjava.lesson_4.game;
+
 import java.util.Scanner;
 
 public class GuessNumberTest {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println(" У вас 10 попыток");
+		System.out.println("У вас 10 попыток");
 		System.out.print("Введите имя первого игрока: ");
 		Player playerOne = new Player(scanner.next());
 
