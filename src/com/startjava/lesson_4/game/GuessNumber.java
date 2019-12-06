@@ -14,25 +14,25 @@ public class GuessNumber {
         this.playerTwo = playerTwo;
     }
 
-    private void inputNumber(Player player, int j) {
+    private void inputNumber(Player player, int i) {
         System.out.print(player.getName() + ", введите число: ");
         player.setNumber(scanner.nextInt());
-        player.args(player.getNumber(), j);
+        player.arrayFillNumber(player.getNumber(), i);
     }
 
-    private void compareNumbers(Player player, int j) {
+    private void compareNumbers(Player player, int i) {
         if (player.getNumber() > compNumber) {
             System.out.println("Ваше число больше, чем загаданное компьютером");
         } else if (player.getNumber() < compNumber) {
             System.out.println("Ваше число меньше, чем загаданное компьютером");
         } else {
-            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (j + 1) + " попытки");
+            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (i + 1) + " попытки");
         }
     }
 
-    private void arrayCount(int[] args, int j) {
-        int[] arg = Arrays.copyOf(args, j + 1);                    //  Для считывания части массива используйте метод Arrays.copyOf
-        for (int value : arg) {
+    private void arrayCount(int[] args, int i) {
+        int[] arrayCopy = Arrays.copyOf(args, i + 1);                    //  Для считывания части массива используйте метод Arrays.copyOf
+        for (int value : arrayCopy) {
             if (value > 0) {
                 System.out.print(value + " ");
             }
@@ -70,12 +70,12 @@ public class GuessNumber {
             System.out.println("У " + playerTwo.getName() + " закончились попытки");
         }
 
-        arrayCount(playerOne.getArray(), i);
+        arrayCount(playerOne.getArrayNumbers(), i);
         System.out.println(" ");
-        arrayCount(playerTwo.getArray(), i);
+        arrayCount(playerTwo.getArrayNumbers(), i);
         System.out.println(" ");
-        arrayFill(playerOne.getArray());
-        arrayFill(playerTwo.getArray());
+        arrayFill(playerOne.getArrayNumbers());
+        arrayFill(playerTwo.getArrayNumbers());
     }
 }
 

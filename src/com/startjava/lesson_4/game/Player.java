@@ -3,10 +3,10 @@ package com.startjava.lesson_4.game;
 public class Player {
     private String name;
     private int number;
-    private int[] array = new int[10];
+    private int[] arrayNumbers = new int[10];
 
     public Player(String name) {
-    	this.name = name;
+        this.name = name;
     }
 
     public String getName() {
@@ -21,11 +21,11 @@ public class Player {
     	return number;
     }
 
-	public int[] getArray() {
-		return array;
+	public int[] getArrayNumbers() {
+        return arrayNumbers;
 	}
 
-	public void args(int number, int j) {
-		array[j] = number;
+	public void arrayFillNumber (int number, int i) {
+        arrayNumbers[i] = number;
     }
 }
