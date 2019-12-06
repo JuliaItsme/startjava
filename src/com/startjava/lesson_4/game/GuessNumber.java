@@ -17,7 +17,7 @@ public class GuessNumber {
     private void inputNumber(Player player, int j) {
         System.out.print(player.getName() + ", введите число: ");
         player.setNumber(scanner.nextInt());
-        player.array[j] = player.getNumber();
+        player.args(player.getNumber(), j);
     }
 
     private void compareNumbers(Player player, int j) {
@@ -70,12 +70,12 @@ public class GuessNumber {
             System.out.println("У " + playerTwo.getName() + " закончились попытки");
         }
 
-        arrayCount(playerOne.array, i);
+        arrayCount(playerOne.getArray(), i);
         System.out.println(" ");
-        arrayCount(playerTwo.array, i);
+        arrayCount(playerTwo.getArray(), i);
         System.out.println(" ");
-        arrayFill(playerOne.array);
-        arrayFill(playerTwo.array);
+        arrayFill(playerOne.getArray());
+        arrayFill(playerTwo.getArray());
     }
 }
 
