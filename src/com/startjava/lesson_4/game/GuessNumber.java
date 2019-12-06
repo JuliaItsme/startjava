@@ -32,9 +32,9 @@ public class GuessNumber {
 
     private void arrayCount(int[] args, int j) {
         int[] arg = Arrays.copyOf(args, j + 1);                    //  Для считывания части массива используйте метод Arrays.copyOf
-        for (int i = 0; i < arg.length; i++) {
-            if (arg[i] > 0) {
-                System.out.print(arg[i] + " ");
+        for (int value : arg) {
+            if (value > 0) {
+                System.out.print(value + " ");
             }
         }
     }
