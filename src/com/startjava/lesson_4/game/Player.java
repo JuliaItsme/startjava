@@ -2,30 +2,26 @@ package com.startjava.lesson_4.game;
 
 public class Player {
     private String name;
-    private int number;
-    private int[] arrayNumbers = new int[10];
+    private int[] attempts = new int[10];
 
     public Player(String name) {
         this.name = name;
     }
 
     public String getName() {
-    	return name;
+        return name;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public int[] getAttempts() {
+        return attempts;
     }
 
-    public int getNumber() {
-    	return number;
+    public void addAttempt(int number, int i) {
+        attempts[i] = number;
     }
 
-	public int[] getArrayNumbers() {
-        return arrayNumbers;
-	}
-
-	public void arrayFillNumber (int number, int i) {
-        arrayNumbers[i] = number;
+    public int extractAttempt(int [] args, int i) {
+        int j = args[i];
+        return j;
     }
 }

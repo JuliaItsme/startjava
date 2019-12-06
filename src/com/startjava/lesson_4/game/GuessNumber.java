@@ -16,14 +16,13 @@ public class GuessNumber {
 
     private void inputNumber(Player player, int i) {
         System.out.print(player.getName() + ", введите число: ");
-        player.setNumber(scanner.nextInt());
-        player.arrayFillNumber(player.getNumber(), i);
+        player.addAttempt(scanner.nextInt(), i);
     }
 
     private void compareNumbers(Player player, int i) {
-        if (player.getNumber() > compNumber) {
+        if ( player.extractAttempt(player.getAttempts(), i) > compNumber) {
             System.out.println("Ваше число больше, чем загаданное компьютером");
-        } else if (player.getNumber() < compNumber) {
+        } else if (player.extractAttempt(player.getAttempts(), i) < compNumber) {
             System.out.println("Ваше число меньше, чем загаданное компьютером");
         } else {
             System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (i + 1) + " попытки");
@@ -31,12 +30,13 @@ public class GuessNumber {
     }
 
     private void arrayCount(int[] args, int i) {
-        int[] arrayCopy = Arrays.copyOf(args, i + 1);                    //  Для считывания части массива используйте метод Arrays.copyOf
+        int[] arrayCopy = Arrays.copyOf(args, i + 1);  //  Для считывания части массива используйте метод Arrays.copyOf
         for (int value : arrayCopy) {
             if (value > 0) {
                 System.out.print(value + " ");
             }
         }
+        System.out.println(" ");
     }
 
     private void arrayFill(int[] args) {
@@ -55,12 +55,12 @@ public class GuessNumber {
         while (i <= 9) {
             inputNumber(playerOne, i);
             compareNumbers(playerOne, i);
-            if (playerOne.getNumber() == compNumber) {
+            if (playerOne.extractAttempt(playerOne.getAttempts(), i) == compNumber) {
                 break;
             }
             inputNumber(playerTwo, i);
             compareNumbers(playerTwo, i);
-            if (playerTwo.getNumber() == compNumber) {
+            if (playerTwo.extractAttempt(playerTwo.getAttempts(), i) == compNumber) {
                 break;
             }
             i++;
@@ -70,12 +70,10 @@ public class GuessNumber {
             System.out.println("У " + playerTwo.getName() + " закончились попытки");
         }
 
-        arrayCount(playerOne.getArrayNumbers(), i);
-        System.out.println(" ");
-        arrayCount(playerTwo.getArrayNumbers(), i);
-        System.out.println(" ");
-        arrayFill(playerOne.getArrayNumbers());
-        arrayFill(playerTwo.getArrayNumbers());
+        arrayCount(playerOne.getAttempts(), i);
+        arrayCount(playerTwo.getAttempts(), i);
+        arrayFill(playerOne.getAttempts());
+        arrayFill(playerTwo.getAttempts());
     }
 }
 
