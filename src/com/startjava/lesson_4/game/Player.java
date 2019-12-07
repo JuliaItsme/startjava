@@ -16,12 +16,11 @@ public class Player {
         return attempts;
     }
 
-    public void addAttempt(int number, int i) {
-        attempts[i] = number;
+    public int getAttempts(int i) {
+        return attempts[i];
     }
 
-    public int extractAttempt(int [] args, int i) {
-        int j = args[i];
-        return j;
+    public void addAttempt(int number, int i) {
+        attempts[i] = number;
     }
 }
