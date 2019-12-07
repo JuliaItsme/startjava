@@ -40,6 +40,9 @@ public class GuessNumber {
     private boolean makeMove(Player player, int i) {
         inputNumber(player, i);
         compareNumbers(player, i);
+        if (player.getAttempt(i) == compNumber) {
+            return false;
+        }
         return playerOne.getAttempt(i) != compNumber;
     }
 
@@ -48,14 +51,15 @@ public class GuessNumber {
         player.addAttempt(scanner.nextInt(), i);
     }
 
-    private void compareNumbers(Player player, int i) {
+    private boolean compareNumbers(Player player, int i) {
         if (player.getAttempt(i) > compNumber) {
-            System.out.println("Ваше число больше, чем загаданное компьютером");
+            System.out.println("Ваше число больше, чем загаданное компьютером " + compNumber);
         } else if (player.getAttempt(i) < compNumber) {
-            System.out.println("Ваше число меньше, чем загаданное компьютером");
+            System.out.println("Ваше число меньше, чем загаданное компьютером" + compNumber);
         } else {
             System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (i + 1) + " попытки");
         }
+        return true;
     }
 
     //  Для считывания части массива используйте метод Arrays.copyOf
