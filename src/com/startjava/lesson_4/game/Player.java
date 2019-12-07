@@ -16,7 +16,7 @@ public class Player {
         return attempts;
     }
 
-    public int getAttempts(int i) {
+    public int getAttempt(int i) {
         return attempts[i];
     }
 

@@ -18,11 +18,10 @@ public class GuessNumber {
         scanner = new Scanner(System.in);
         compNumber = (int) (Math.random() * 101);
         int i;
-
         for (i = 0; i <= 9; i++) {
-            if (makeMove(playerOne, i) == false) {
+            if (!makeMove(playerOne, i)) {
                 break;
-            } else if (makeMove(playerTwo, i) == false) {
+            } else if (!makeMove(playerTwo, i)) {
                 break;
             }
         }
@@ -30,21 +29,16 @@ public class GuessNumber {
             System.out.println("У " + playerOne.getName() + " закончились попытки");
             System.out.println("У " + playerTwo.getName() + " закончились попытки");
         }
-
-        numberCount(playerOne.getAttempts(), i);
-        numberCount(playerTwo.getAttempts(), i);
-        numberFill(playerOne.getAttempts(), i);
-        numberFill(playerTwo.getAttempts(), i);
+        showNumbers(playerOne.getAttempts(), i);
+        showNumbers(playerTwo.getAttempts(), i);
+        fill(playerOne.getAttempts(), i);
+        fill(playerTwo.getAttempts(), i);
     }
 
     private boolean makeMove(Player player, int i) {
         inputNumber(player, i);
         compareNumbers(player, i);
-        if (playerOne.getAttempts(i) == compNumber) {
-            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (i + 1) + " попытки");
-            return false;
-        }
-        return true;
+        return playerOne.getAttempt(i) != compNumber;
     }
 
     private void inputNumber(Player player, int i) {
@@ -53,27 +47,30 @@ public class GuessNumber {
     }
 
     private void compareNumbers(Player player, int i) {
-        if (player.getAttempts(i) > compNumber) {
+        if (player.getAttempt(i) > compNumber) {
             System.out.println("Ваше число больше, чем загаданное компьютером" + compNumber);
-        } else if (player.getAttempts(i) < compNumber) {
+        } else if (player.getAttempt(i) < compNumber) {
             System.out.println("Ваше число меньше, чем загаданное компьютером" + compNumber);
+        } else {
+            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (i + 1) + " попытки");
         }
     }
 
     //  Для считывания части массива используйте метод Arrays.copyOf
-    private void numberCount(int[] attempt, int i) {
-        int[] attemptsCopy = Arrays.copyOf(attempt, i + 1);
+    private void showNumbers(int[] attempts, int i) {
+        int[] attemptsCopy = Arrays.copyOf(attempts, i + 1);
         System.out.println(Arrays.toString(attemptsCopy));
     }
 
     // Для обнуления массивов игроков, при повторном запуске игры, используйте метод Arrays.fill().
     // При этом обнуляйте только те ячейки, где хранятся, названные игроками числа.
-    private void numberFill(int[] attempt, int i) {
+    private void fill(int[] attempts, int i) {
         if (i < 9) {
-            Arrays.fill(attempt, 0, i + 1, 0);
+            Arrays.fill(attempts, 0, i + 1, 0);
         } else {
-            Arrays.fill(attempt, 0, i, 0);
+            Arrays.fill(attempts, 0, i, 0);
         }
     }
 }
+
 
