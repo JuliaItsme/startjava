@@ -50,9 +50,9 @@ public class GuessNumber {
 
     private void compareNumbers(Player player, int i) {
         if (player.getAttempt(i) > compNumber) {
-            System.out.println("Ваше число больше, чем загаданное компьютером" + compNumber);
+            System.out.println("Ваше число больше, чем загаданное компьютером");
         } else if (player.getAttempt(i) < compNumber) {
-            System.out.println("Ваше число меньше, чем загаданное компьютером" + compNumber);
+            System.out.println("Ваше число меньше, чем загаданное компьютером");
         } else {
             System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (i + 1) + " попытки");
         }
