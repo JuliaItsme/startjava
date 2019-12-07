@@ -25,10 +25,12 @@ public class GuessNumber {
                 break;
             }
         }
+
         if (i == 10) {
             System.out.println("У " + playerOne.getName() + " закончились попытки");
             System.out.println("У " + playerTwo.getName() + " закончились попытки");
         }
+
         showNumbers(playerOne.getAttempts(), i);
         showNumbers(playerTwo.getAttempts(), i);
         fill(playerOne.getAttempts(), i);
